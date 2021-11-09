@@ -6,7 +6,8 @@ It consists of three components -
 - Customer Service
 - Order Service 
 
-![Complete System Flow](https://ibb.co/7ryFPcb) 
+## System Overview
+![Complete System Flow](https://i.ibb.co/RQHWfn7/Screenshot-2021-11-09-at-5-34-21-PM.png) 
 
 ## Start the services
 - Start the service(s)
