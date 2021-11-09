@@ -1,0 +1,54 @@
+mutation AddCustomer($customer: CustomerInput){
+    addCustomer(customer: $customer){
+        id
+        firstName
+        lastName
+        emailId
+        profilePicURL
+    }
+}
+
+#{
+#"customer": {
+#"firstName": "Lakshay",
+#"lastName": "Bhambri",
+#"emailId": "bhambri.lakshay.lakshay@gmail.com",
+#"profilePicURL": "http://google.co.in"
+#}
+#}
+
+mutation UpdateCustomer($customerId: ID!, $customer: CustomerInput){
+    updateCustomer(customerId:$customerId, customer: $customer){
+        id
+        firstName
+        lastName
+        emailId
+        profilePicURL
+    }
+}
+
+#{
+#"customerId": "40289d5b7c32a877017c32aadf960000",
+#"customer": {
+#"firstName": "Lakshay",
+#"lastName": "Bhambri",
+#"emailId": "bhambri.lakshay.lakshay@gmail.com",
+#"profilePicURL": "http://amazon.com"
+#}
+#}
+
+#40289d5b7c4a08da017c4a1515650000
+
+query GetCustomerById($customerId: ID!){
+    getCustomerById(customerId: $customerId){
+        id
+        firstName
+        lastName
+        emailId
+        profilePicURL
+    }
+}
+
+#{
+#"customerId": "40289d5b7c4a08da017c4a1515650000"
+#}

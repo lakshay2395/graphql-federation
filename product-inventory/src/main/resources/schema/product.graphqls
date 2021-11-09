@@ -1,0 +1,26 @@
+enum ProductType{
+    CLOTHING, FOOTWEAR, ELECTRONICS
+}
+
+type Product @key(fields: "id"){
+    id: ID!
+    name: String!
+    cost: Float!
+    type: ProductType!
+}
+
+input ProductInput {
+    name: String!
+    cost: Float!
+    type: ProductType!
+}
+
+type Query {
+    getProductById(productId: ID!): Product
+    getProductByType(productType: ProductType!): [Product]!
+}
+
+type Mutation{
+    addProduct(product: ProductInput): Product
+    updateProduct(productId: ID!, product: ProductInput): Product
+}

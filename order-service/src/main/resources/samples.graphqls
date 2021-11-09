@@ -1,0 +1,23 @@
+query Query($getOrderByIdOrderId: ID!) {
+    getOrderById(orderId: $getOrderByIdOrderId) {
+        customer {
+            emailId
+            firstName
+            id
+            lastName
+            profilePicURL
+        }
+        id
+        products {
+            cost
+            id
+            name
+            type
+        }
+        status
+    }
+}
+
+#{
+#"getOrderByIdOrderId": "40289d5b7c3c5a0a017c3c5af29a0000"
+#}

@@ -1,0 +1,23 @@
+type Customer @key(fields: "id"){
+    id: ID!
+    firstName: String!
+    lastName: String!
+    emailId: String!
+    profilePicURL: String
+}
+
+input CustomerInput {
+    firstName: String!
+    lastName: String!
+    emailId: String!
+    profilePicURL: String
+}
+
+type Query {
+    getCustomerById(customerId: ID!): Customer
+}
+
+type Mutation {
+    addCustomer(customer: CustomerInput): Customer
+    updateCustomer(customerId: ID!,customer: CustomerInput): Customer
+}

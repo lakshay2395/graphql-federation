@@ -1,0 +1,88 @@
+mutation AddProduct($productInput: ProductInput) {
+    addProduct(product: $productInput) {
+        id
+        name
+        type
+        cost
+    }
+}
+
+#{
+#"productInput": {
+#"name": "OnePlus 7",
+#"type": "ELECTRONICS",
+#"cost": 30000
+#}
+#}
+
+mutation AddProduct($productInput0: ProductInput, $productInput1: ProductInput, $productInput2: ProductInput) {
+    add0: addProduct(product: $productInput0) {
+        id
+        name
+        type
+        cost
+    }
+    add1: addProduct(product: $productInput1) {
+        id
+        name
+        type
+        cost
+    }
+    add2: addProduct(product: $productInput2) {
+        id
+        name
+        type
+        cost
+    }
+}
+
+#{
+#"productInput0": {
+#"name": "OnePlus7",
+#"type": "ELECTRONICS",
+#"cost": 30000
+#},
+#"productInput1": {
+#"name": "OnePlus 8",
+#"type": "ELECTRONICS",
+#"cost": 35000
+#},
+#"productInput2": {
+#"name": "OnePlus 9R",
+#"type": "ELECTRONICS",
+#"cost": 40000
+#}
+#}
+
+query GetProductById($productId: ID!) {
+    getProductById(productId: $productId){
+        id
+        name
+        type
+        cost
+    }
+}
+
+#{
+#"productId": "40289d5b7c4a1f6c017c4a2676740000"
+#}
+
+query GetProduct($productId: ID!,$productType: ProductType!){
+    getProductById(productId: $productId){
+        id
+        name
+        type
+        cost
+    }
+    getProductByType(productType: $productType){
+        id
+        name
+        type
+        cost
+    }
+}
+
+#{
+#"productId": "40289d5b7c4a6f74017c4a8fa63b0000",
+#"productType": "ELECTRONICS"
+#}

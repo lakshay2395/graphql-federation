@@ -1,0 +1,32 @@
+enum OrderStatus {
+    PENDING,COMPLETED
+}
+
+type Product @key(fields: "id") @extends{
+    id: ID! @external
+}
+
+type Customer @key(fields: "id") @extends{
+    id: ID! @external
+}
+
+type Order {
+    id: ID!
+    customer: Customer!
+    status: OrderStatus!
+    products: [Product!]!
+}
+
+input OrderInput {
+    customerId: String!
+    status: OrderStatus!
+    productIds: [String!]!
+}
+
+type Query {
+    getOrderById(orderId: ID!): Order
+}
+
+type Mutation {
+    addOrder(order: OrderInput): Order
+}

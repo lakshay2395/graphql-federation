@@ -1,0 +1,19 @@
+query getProductById($productId: ID!) {
+    getProductById(productId: $productId) {
+        name
+        cost
+    }
+}
+
+
+
+mutation addProduct($product: ProductInput){
+    addProduct(product: $product){
+        id
+        name
+        cost
+        type
+    }
+}
+
+#40289d5b7c2df560017c2e024b270000
